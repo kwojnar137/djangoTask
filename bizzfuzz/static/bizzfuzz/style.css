@@ -1,0 +1,88 @@
+.body{
+    background-color: brown;
+}
+
+
+.table {
+    color: rgb(0, 0, 0)
+
+}
+
+
+.record {
+    display: flex;
+    justify-content: center;
+    height: 3em;
+    text-align: center;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-top: 1em;
+    
+}
+
+.head {
+    font-weight: bold;
+    width: 8em;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.head.username{
+    width: 16em;
+    border-width: 0.5px;
+}
+
+.menu {
+    
+    justify-content: center;
+    height: 3em;
+    text-align: center;
+}
+
+.query {
+
+    width: 8em;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.query.username {
+    width: 16em;
+    font-weight: bold;
+    border-width: 0.5px;
+}
+
+.option {
+
+    width: 8em;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register{
+
+    font-size: 1em;
+}
+
+.register a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+}

@@ -1,0 +1,23 @@
+<h3>Edit</h3>
+
+<div>
+	Username: {{userInstance.username}} 
+<div>
+
+<div>
+	Birthday: {{userInstance.birth_date.year}}-{{userInstance.birth_date.month}}-{{userInstance.birth_date.day}} 
+<div>
+
+<form method='POST'>
+	{% csrf_token %}
+
+	{{form.as_p}}
+		
+	<input type="submit" value="Edit">
+</form>
+
+<div>
+	<a href="{% url 'index' %}"> 
+		<button>Cancel</button>
+	</a>
+</div>

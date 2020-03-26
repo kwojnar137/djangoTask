@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users list</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bizzfuzz/style.css' %}">
+</head>
+
+<body>
+
+<div class='register'>
+    <a href="{% url 'register' %}"> 
+        <img src="{% static 'bizzfuzz/images/add.svg' %}" alt="Edit" height="80" width="80"> ADD USER
+    </a>
+</div>
+
+{% load custom_tags %}
+    
+<div class='table'>
+{% if users_list %}
+
+    
+
+        <div class="record">
+            <div class="head username">
+                Username
+            </div>
+            <div class="head">
+                Birthday
+            </div>
+            <div class="head">
+                Eligible
+            </div>
+            <div class="head">
+                Random Number
+            </div>
+            <div class="head">
+                BizzFuzz
+            </div>
+            <div class="head">
+                View details
+            </div>
+            <div class="head">
+                Edit
+            </div>
+            <div class="head">
+                Delete
+            </div>
+        </div>
+
+    {% for user in users_list %}
+
+            <div class="record">
+                
+                <div class="query username">
+                    {{ user.username }}
+                </div>
+                <div class="query">
+                    {{ user.birth_date.day }}/{{ user.birth_date.month }}/{{ user.birth_date.year }}
+                </div>
+                <div class="query">
+                    {{ user.id|eligible}}
+                </div>
+                <div class="query">
+                    {{ user.random_number }}
+                </div>
+                <div class="query">
+                    {{ user.random_number|bizzfuzz }}
+                </div>
+                <div class="option">
+                    <a href="{% url 'details' user.id %}">
+                        <img src="{% static 'bizzfuzz/images/view-icon.svg' %}" alt="Edit" height="24" width="24">
+                    </a>
+                </div>
+                <div class="option">
+                    <a href="{% url 'edit' user.id %}">  
+                        <img src="{% static 'bizzfuzz/images/edit-solid.svg' %}" alt="Edit" height="24" width="24">
+                    </a>
+                </div>
+                <div class="option">
+
+                    <a href="{% url 'delete' user.id %}"> 
+                        <img src="{% static 'bizzfuzz/images/trash-solid.svg' %}" alt="Edit" height="20" width="20">
+                    </a>
+                </div>
+                
+            </div> 
+
+        
+
+    {% endfor %}
+{% else %}
+    <p>No users are available.</p>
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
